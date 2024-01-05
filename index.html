@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShovelMine</title>
+  <style>
+    body {
+	  color: rgb(255, 255, 255);
+	  background-color: #181818;
+      font-family: Arial, sans-serif;
+      background-image: url('portal-in-minecraft.1920x1080.gif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+   .box {
+     background-color: rgba(68, 68, 68, 0.7);
+     padding: 50px;
+     border-radius: 20px;
+     max-width: 80%;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+	 box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+     margin: 0 auto;
+    }
+
+    
+    h1 {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+    
+    #countdown {
+        font-size: 4rem;
+        margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .discord-btn {
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+      display: inline-block;
+      background-color: rgb(255, 0, 0);
+      color: #ffffff;
+      font-size: 24px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .discord-btn:hover {
+      background-color: #4d4d4d;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .box {
+        padding: 20px;
+        max-width: 100%;
+        border-radius: 20px;
+        background-color: rgba(68, 68, 68, 0.7);
+      }
+      h1 {
+        font-size: 36px;
+      }
+      #countdown {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <h1>До летних каникул осталось</h1>
+      <div id="countdown"></div>
+      <p>В настоящее время школа ещё продолжается летние каникулы 20 июня.</p>
+      <a href="https://www.youtube.com/@pludan" class="discord-btn">Подписывайтесь на мой Youtube</a>
+	  <img id="cat-image" src="cat.png" alt="Cat Image" width="90" height="70">
+    </div>
+  </div>
+  <script>
+    // Set the date we're counting down to
+      var countDownDate = new Date("June 20, 2024 12:00:00").getTime();
+
+      var x = setInterval(function() {
+      var now = new Date().getTime();
+
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML = days + "д. " + hours + "ч. "
+      + minutes + "мин. " + seconds + "сек. ";
+
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "Мы скоро будем онлайн!";
+
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
